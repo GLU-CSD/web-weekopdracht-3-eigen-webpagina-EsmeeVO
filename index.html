@@ -3,13 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My project title</title>
-    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <!-- <script src="CDN library url"></script> -->
-    <script defer src="main.js"></script>
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('https://www.transparenttextures.com/patterns/roses.png'), #FDF6F0;
+            color: #5D5A58;
+        }
+        header {
+            background-color: #FADADD;
+            color: #6B4226;
+            text-align: center;
+            padding: 1rem 0;
+            font-family: 'Georgia', serif;
+        }
+        header h1 {
+            font-size: 4rem; /* Adjusted font size */
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .flex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .flex-grid .section {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        /* Default order (Image on the right) */
+        .section {
+            flex-direction: row;
+        }
+        /* Even-numbered sections: Image on the left */
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .text-section, .image-section {
+            background-color: #FFF5EE;
+            padding: 1rem;
+            border: 1px solid #EACBCB;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Ensure both sections take equal width */
+        }
+        .image-section {
+            text-align: center;
+        }
+        .image-section img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 3px solid #EACBCB;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #FADADD;
+            color: #6B4226;
+            text-align: center;
+            padding: 1rem 0;
+            font-family: 'Georgia', serif;
+        }
+        h2 {
+            color: #6B4226;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.from("header h1", { duration: 1.5, y: -50, opacity: 0, ease: "bounce" });
+
+            const sections = document.querySelectorAll(".text-section, .image-section");
+            sections.forEach((section, index) => {
+                gsap.from(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.5,
+                    delay: index * 0.2
+                });
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <h1>Hello world!</h1>
+
+<header>
+    <h1>About Me</h1>
+    <p>Learn more about me below!</p>
+</header>
+
+<div class="container">
+    <!-- Section 1 -->
+    <div class="flex-grid">
+        <div class="section">
+            <div class="text-section">
+                <h2>About me</h2>
+                <p>welcom to the website about me, on this website im gonna tell a little bit about my self, about my hobbys and about my qualifications. this website will also talk about my hobbys and many other things. WARNING this website will not make sens it will just be a site with random stuff about me.
+                </p>
+            </div>
+            <div class="image-section">
+                <h2>Cute koalas</h2>
+                <p>My favorite animal:</p>
+                <img src="assets/4.jpeg" alt="Your image here">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="flex-grid">
+        <div class="section">
+            <div class="text-section">
+                <h2>Es van Oostrom</h2>
+                <p>my name is Es van Oostrom im 19 years old and i was born in the netherland there i still live i live at home with my 2 dogs Murphy and Ziva. At the age of 10 or 11 i was diagnosed with autism </p>
+            </div>
+            <div class="image-section">
+                <h2></h2>
+                <p>My dog Murphy:</p>
+                <img src="assets/454988935_8304014266322411_608676353437170458_n.jpg" alt="Your image here">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="flex-grid">
+        <div class="section">
+            <div class="text-section">
+                <h2>Section 3</h2>
+                <p>Write your text here...</p>
+            </div>
+            <div class="image-section">
+                <h2>Image 3</h2>
+                <p>Add an image below:</p>
+                <img src="your-image-3.jpg" alt="Your image here">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="flex-grid">
+        <div class="section">
+            <div class="text-section">
+                <h2>Section 4</h2>
+                <p>Write your text here...</p>
+            </div>
+            <div class="image-section">
+                <h2>Image 4</h2>
+                <p>Add an image below:</p>
+                <img src="your-image-4.jpg" alt="Your image here">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="flex-grid">
+        <div class="section">
+            <div class="text-section">
+                <h2>Section 5</h2>
+                <p>Write your text here...</p>
+            </div>
+            <div class="image-section">
+                <h2>Image 5</h2>
+                <p>Add an image below:</p>
+                <img src="your-image-5.jpg" alt="Your image here">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="flex-grid">
+        <div class="section">
+            <div class="text-section">
+                <h2>Section 6</h2>
+                <p>Write your text here...</p>
+            </div>
+            <div class="image-section">
+                <h2>Image 6</h2>
+                <p>Add an image below:</p>
+                <img src="your-image-6.jpg" alt="Your image here">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="flex-grid">
+        <div class="section">
+            <div class="text-section">
+                <h2>Section 7</h2>
+                <p>Write your text here...</p>
+            </div>
+            <div class="image-section">
+                <h2>Image 7</h2>
+                <p>Add an image below:</p>
+                <img src="your-image-7.jpg" alt="Your image here">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 About Me</p>
+</footer>
+
 </body>
 </html>
+
+
