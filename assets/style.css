@@ -1,0 +1,97 @@
+/* Poll Styling */
+.poll-options {
+    background-color: #FDF6F0; /* Light pastel background */
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #EACBCB;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.poll-options label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    color: #6B4226;
+}
+
+.poll-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Flower button styles */
+.flower-btn {
+    background-color: #FADADD; /* Soft pink color */
+    color: #6B4226;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Flower petals using pseudo-elements */
+.flower-btn::before, .flower-btn::after {
+    content: '';
+    position: absolute;
+    background-color: #F8C8C8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: -1; /* Place the petals behind the button */
+}
+
+.flower-btn::before {
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flower-btn::after {
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Add more petals around the flower */
+.flower-btn::before, .flower-btn::after, .flower-btn .petal1, .flower-btn .petal2, .flower-btn .petal3, .flower-btn .petal4 {
+    position: absolute;
+    background-color: #F8C8C8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.flower-btn .petal1 {
+    top: -25px;
+    left: -25px;
+}
+
+.flower-btn .petal2 {
+    top: -25px;
+    right: -25px;
+}
+
+.flower-btn .petal3 {
+    bottom: -25px;
+    left: -25px;
+}
+
+.flower-btn .petal4 {
+    bottom: -25px;
+    right: -25px;
+}
+
+/* Hover effect */
+.flower-btn:hover {
+    transform: scale(1.1);
+    background-color: #F8C8C8; /* Lighter pink on hover */
+}
+
+.flower-btn:active {
+    transform: scale(1);
+    background-color: #F8A3A3; /* Darker pink when clicked */
+}
