@@ -3,304 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>About Me</title>
+    <title>Custom Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background: url('https://www.transparenttextures.com/patterns/roses.png'), #FDF6F0;
-            color: #5D5A58;
+            background-color: #fefefe;
+            color: #333;
         }
         header {
-            background-color: #FADADD;
-            color: #6B4226;
+            background-color: #f7f1e3;
+            padding: 20px;
             text-align: center;
-            padding: 1rem 0;
-            font-family: 'Georgia', serif;
         }
         header h1 {
-            font-size: 4rem; /* Adjusted font size */
+            font-size: 2.5rem;
+            color: #3d3d3d;
             margin: 0;
+        }
+        header p {
+            font-size: 1rem;
+            color: #6c757d;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 20px;
         }
-        .flex-grid {
+        .row {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 20px;
+            margin-bottom: 40px;
         }
-        .flex-grid .section {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        /* Default order (Image on the right) */
-        .section {
-            flex-direction: row;
-        }
-        /* Even-numbered sections: Image on the left */
-        .section:nth-child(even) {
+        .row:nth-child(even) {
             flex-direction: row-reverse;
         }
-        .text-section, .image-section {
-            background-color: #FFF5EE;
-            padding: 1rem;
-            border: 1px solid #EACBCB;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            flex: 1; /* Ensure both sections take equal width */
+        .text-box, .image-box {
+            flex: 1 1 calc(50% - 20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        .image-section {
-            text-align: center;
+        .text-box {
+            background-color: #fafafa;
         }
-        .image-section img {
-            width: 100%;
-            max-width: 600px;
+        .text-box h2 {
+            margin-bottom: 10px;
+        }
+        .text-box p {
+            margin: 0;
+        }
+        .image-box {
+            background-color: #f7f7f7;
+        }
+        .image-box img {
+            max-width: 100%;
             height: auto;
-            display: block;
-            margin: 0 auto;
-            border: 3px solid #EACBCB;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         footer {
-            background-color: #FADADD;
-            color: #6B4226;
             text-align: center;
-            padding: 1rem 0;
-            font-family: 'Georgia', serif;
-        }
-        h2 {
-            color: #6B4226;
+            padding: 20px;
+            background-color: #f7f1e3;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            gsap.from("header h1", { duration: 1.5, y: -50, opacity: 0, ease: "bounce" });
-
-            const sections = document.querySelectorAll(".text-section, .image-section");
-            sections.forEach((section, index) => {
-                gsap.from(section, {
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top 80%",
-                        toggleActions: "play none none none"
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 0.5,
-                    delay: index * 0.2
-                });
-            });
-        });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
 <header>
-    <h1>About Me</h1>
-    <p>Learn more about me below!</p>
+    <h1 id="site-title">Welcome to My Website</h1>
+    <p>Customize the content and images as you wish!</p>
 </header>
 
 <div class="container">
-    <!-- Section 1 -->
-    <div class="flex-grid">
-        <div class="section">
-            <div class="text-section">
-                <h2>About me</h2>
-                <p>welcom to the website about me, on this website im gonna tell a little bit about my self, about my hobbys and about my qualifications. this website will also talk about my hobbys and many other things. WARNING this website will not make sens it will just be a site with random stuff about me.
-                </p>
-            </div>
-            <div class="image-section">
-                <h2>Cute koalas</h2>
-                <p>My favorite animal:</p>
-                <img src="assets/4.jpeg" alt="Your image here">
+    <div class="row">
+        <div class="text-box">
+            <div>
+                <h2>Section 1</h2>
+                <p>Write your text here...</p>
             </div>
         </div>
-    </div>
-
-    <!-- Section 2 -->
-    <div class="flex-grid">
-        <div class="section">
-            <div class="text-section">
-                <h2>Es van Oostrom</h2>
-                <p>my name is Es van Oostrom im 19 years old and i was born in the netherland there i still live at home with my 2 dogs Murphy and Ziva. At the age of 10 or 11 i was diagnosed with autism </p>
-            </div>
-            <div class="image-section">
-                <h2></h2>
-                <p>My dog Murphy:</p>
-                <img src="assets/454988935_8304014266322411_608676353437170458_n.jpg" alt="Your image here">
-            </div>
+        <div class="image-box">
+            <img src="" alt="Your image here">
         </div>
     </div>
-
-    <!-- Section 3 -->
-    <div class="flex-grid">
-        <div class="section">
-            <div class="text-section">
+    <div class="row">
+        <div class="text-box">
+            <div>
+                <h2>Section 2</h2>
+                <p>Write your text here...</p>
+            </div>
+        </div>
+        <div class="image-box">
+            <img src="" alt="Your image here">
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-box">
+            <div>
                 <h2>Section 3</h2>
                 <p>Write your text here...</p>
             </div>
-            <div class="image-section">
-                <h2>Image 3</h2>
-                <p>Add an image below:</p>
-                <img src="your-image-3.jpg" alt="Your image here">
-            </div>
+        </div>
+        <div class="image-box">
+            <img src="" alt="Your image here">
         </div>
     </div>
-
-<!-- Section 3 -->
-<div class="flex-grid">
-    <div class="section">
-        <div class="text-section">
-            <h2>Section 3</h2>
-            <p>Write your text here...</p>
-        </div>
-        <div class="image-section">
-            <h2>Image 3</h2>
-            <p>Add an image below:</p>
-            <img src="your-image-3.jpg" alt="Your image here">
-        </div>
-    </div>
-</div>
-
-<!-- Poll Section (Between Section 3 and Section 4) -->
-<div class="flex-grid">
-    <div class="section">
-        <div class="text-section">
-            <h2>Poll: Do You Like This Website?</h2>
-            <p>Your opinion matters! Please select an answer below:</p>
-            <form id="pollForm">
-                <div class="poll-options">
-                    <label>
-                        <input type="radio" name="poll" value="Yes" /> Yes
-                    </label><br>
-                    <label>
-                        <input type="radio" name="poll" value="No" /> No
-                    </label><br>
-                    <label>
-                        <input type="radio" name="poll" value="Maybe" /> Maybe
-                    </label><br>
-                    <label>
-                        <input type="radio" name="poll" value="Totally" /> Totally
-                    </label><br><br>
-                </div>
-                <button type="submit" class="poll-submit">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<!-- Section 4 -->
-<div class="flex-grid">
-    <div class="section">
-        <div class="text-section">
-            <h2>Section 4</h2>
-            <p>Write your text here...</p>
-        </div>
-        <div class="image-section">
-            <h2>Image 4</h2>
-            <p>Add an image below:</p>
-            <img src="your-image-4.jpg" alt="Your image here">
-        </div>
-    </div>
-</div>
-
-
-    <!-- Section 4 -->
-    <div class="flex-grid">
-        <div class="section">
-            <div class="text-section">
-                <h2>Section 4</h2>
-                <p>Write your text here...</p>
-            </div>
-            <div class="image-section">
-                <h2>Image 4</h2>
-                <p>Add an image below:</p>
-                <img src="your-image-4.jpg" alt="Your image here">
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 5 -->
-    <div class="flex-grid">
-        <div class="section">
-            <div class="text-section">
-                <h2>Section 5</h2>
-                <p>Write your text here...</p>
-            </div>
-            <div class="image-section">
-                <h2>Image 5</h2>
-                <p>Add an image below:</p>
-                <img src="your-image-5.jpg" alt="Your image here">
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 6 -->
-    <div class="flex-grid">
-        <div class="section">
-            <div class="text-section">
-                <h2>Section 6</h2>
-                <p>Write your text here...</p>
-            </div>
-            <div class="image-section">
-                <h2>Image 6</h2>
-                <p>Add an image below:</p>
-                <img src="your-image-6.jpg" alt="Your image here">
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 7 -->
-    <div class="flex-grid">
-        <div class="section">
-            <div class="text-section">
-                <h2>Section 7</h2>
-                <p>Write your text here...</p>
-            </div>
-            <div class="image-section">
-                <h2>Image 7</h2>
-                <p>Add an image below:</p>
-                <img src="your-image-7.jpg" alt="Your image here">
-            </div>
-        </div>
-    </div>
-
 </div>
 
 <footer>
-    <p>&copy; 2025 About Me</p>
+    <p>&copy; 2025 My Website</p>
 </footer>
 
-</body>
-
-
-</html>
-
 <script>
-    document.getElementById('pollForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        const selectedOption = document.querySelector('input[name="poll"]:checked');
-        
-        if (selectedOption) {
-            alert('You selected: ' + selectedOption.value);
-            // You can store or process the selected answer here
-        } else {
-            alert('Please select an option.');
-        }
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.from("#site-title", {
+            duration: 2,
+            opacity: 0,
+            y: -50,
+            ease: "bounce.out"
+        });
     });
 </script>
 
+<a href="https://www.instagram.com/esmeeanime/">
+<ion-icon name="logo-instagram"></ion-icon>
+</a>
 
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
